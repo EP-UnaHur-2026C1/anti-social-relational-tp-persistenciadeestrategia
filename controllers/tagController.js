@@ -37,7 +37,6 @@ const actualizarTag = async (req, res) => {
     const { id } = req.params;
     const { name } = req.body;
     const tag = req.tag;
-
     await tag.update({ name });
     res.status(200).json(tag);
   } catch (error) {
@@ -51,7 +50,6 @@ const eliminarTag = async (req, res) => {
   try {
     const { id } = req.params;
     const tag = req.tag;
-
     await tag.destroy();
     res.status(200).json({
       message: "Tag eliminado correctamente",
