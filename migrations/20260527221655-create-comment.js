@@ -15,6 +15,14 @@ module.exports = {
       visible: {
         type: Sequelize.BOOLEAN
       },
+      userId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      postId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
