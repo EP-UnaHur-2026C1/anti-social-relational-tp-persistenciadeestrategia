@@ -12,8 +12,8 @@ module.exports = {
       descripcion: {
         type: Sequelize.STRING
       },
-      userNickname:{
-        type: Sequelize.STRING,
+      userId: {
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       createdAt: {
