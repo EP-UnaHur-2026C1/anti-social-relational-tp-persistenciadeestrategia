@@ -6,7 +6,7 @@ const commentSchema = Joi.object({
         'string.max': 'El contenido no puede superar los 500 caracteres',
         'any.required': 'El contenido es obligatorio',
      }),
-    userId: Joi.number().integer().positive().required().messages({ // ← userNickname → userId
+    userId: Joi.number().integer().positive().required().messages({ 
         'number.base': 'El userId debe ser un número',
         'any.required': 'El userId es obligatorio',
     }),
@@ -14,6 +14,7 @@ const commentSchema = Joi.object({
         'number.base': 'El postId debe ser un número',
         'any.required': 'El postId es obligatorio',
     }),
+    createdAt: Joi.date().iso().optional()
 });
 
 module.exports = commentSchema;

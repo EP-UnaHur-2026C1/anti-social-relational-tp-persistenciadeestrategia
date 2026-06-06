@@ -25,13 +25,14 @@ const obtenerComentarios = async (req, res) => {
 
 const crearComentario = async (req, res) => {
   try {
-    const { content, userId, postId } = req.body;
+    const { content, userId, postId, createdAt } = req.body;
 
     const comentario = await Comment.create({
       content,
       userId,
       postId,
-      visible: true
+      visible: true,
+      createdAt
     });
     res.status(201).json(comentario);
     } catch (error) {
