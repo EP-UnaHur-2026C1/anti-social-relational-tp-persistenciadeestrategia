@@ -34,6 +34,7 @@ router.delete(
 );
 router.delete(
   "/:id/images/:imageId",
+  postMiddlewares.validatePostExists,
   postMiddlewares.validateImageExists,
   postController.deleteImagePost,
 );
