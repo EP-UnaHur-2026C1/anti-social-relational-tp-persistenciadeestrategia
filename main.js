@@ -8,6 +8,7 @@ const routerUsers = require("./routes/userRoutes");
 const routerFollowers = require("./routes/followerRoutes");
 const routerTag = require("./routes/tagRoutes");
 const routerPost = require("./routes/postsRoutes");
+const routerComments = require("./routes/commentRoutes");
 
 app.use(express.json());
 
@@ -15,6 +16,7 @@ app.use("/users", routerUsers);
 app.use("/followers", routerFollowers);
 app.use("/posts", routerPost);
 app.use("/tags", routerTag);
+app.use("/comments", routerComments);
 
 app.listen(PORT, async () => {
   await db.sequelize.sync();
