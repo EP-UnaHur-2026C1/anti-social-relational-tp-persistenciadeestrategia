@@ -7,14 +7,16 @@ const PORT = process.env.PORT || 3000;
 const routerUsers = require("./routes/userRoutes");
 const routerFollowers = require("./routes/followerRoutes");
 const routerComments = require("./routes/commentRoutes"); 
-const postRoutes = require('./routes/postsRoutes')
+const routerTag = require("./routes/tagRoutes");
+const routerPost = require("./routes/postsRoutes");
 
 app.use(express.json());
 
-app.use(postRoutes)
 app.use("/user", routerUsers);
 app.use("/follower", routerFollowers);
 app.use("/comment", routerComments);
+app.use("/post", routerPost);
+app.use("/tag", routerTag);
 
 
 app.listen(PORT, async () => {
